@@ -1,0 +1,92 @@
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    border: 1px solid black;
+    border-left: 0px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.history{
+    height: 479px;
+    width: 310px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+}
+
+.history_empty{
+    margin: auto;
+    font-size: 18px;
+    color: #0097b3;
+}
+
+.note{
+    max-width: 280px;
+    width: 100%;
+    word-wrap: break-word;
+    padding: 5px 10px;
+}
+
+.note_prompt{
+    z-index: 10;
+    background: rgb(137, 190, 255);
+    border: 1px solid #0c00ba;
+    padding: 0 5px; 
+    font-size: 14px;
+    visibility: hidden;
+    height: 0px;
+}
+
+.note_container:hover p{
+    visibility: visible;
+    height: 100%;
+}
+
+.note_body{
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    word-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.note_res{
+    font-size: 18px;
+    font-weight: 500;
+    color: #0097b3;
+}
+
+.clear{
+    height: 75px;
+    max-width: 310px;
+    border-top: 1px solid black;
+    background: #c4f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.clear:hover{
+    background: #70e5fa;    
+}
+
+@media (max-width: 800px) {
+    .main{
+        width: 100%;
+        visibility: hidden;
+        display: none;
+    }
+}

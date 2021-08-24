@@ -1,0 +1,29 @@
+.header{
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+}
+
+.header_block{
+    display: flex;
+}
+
+.header_block{
+    letter-spacing: 0.05em;
+}
+
+.selected{
+    color: #0097b3;
+    border-bottom: 2px solid black;
+}
+
+@media (max-width: 800px) {
+    .header{
+        display: none;
+    }
+}
