@@ -1,6 +1,10 @@
 import style from './History.module.css';
 
-const History = ({ history, setHistory }) => {
+
+let classNames = require('classnames/bind')
+let cx = classNames.bind(style);
+
+const History = ({ history, setHistory, view, setView }) => {
     const clearHistory = () => {
         let openRequest = indexedDB.open('aaa', 3);
 
@@ -21,8 +25,14 @@ const History = ({ history, setHistory }) => {
         }
     }
 
+    let classMain = cx({ main: true }, { hiddenEl: view })
+
+    const toggleView = () => {
+        setView(view);
+    }
+
     return (
-        <div className={style.main}>
+        <div className={classMain}>
             <div className={style.history}>
                 {history.length > 0
                     ? history.map((note, id) => {
@@ -39,7 +49,10 @@ const History = ({ history, setHistory }) => {
                     : <div className={style.history_empty}>История пуста</div>
                 }
             </div>
-            <div className={style.clear} onClick={clearHistory}>Очистить историю</div>
+            <div className={style.history_buttons}>
+                <div className={style.history_buttons_clear} onClick={clearHistory}>Очистить историю</div>
+                <div className={style.history_buttons_back} onClick={toggleView}>Назад</div>
+            </div>
         </div>
     )
 }

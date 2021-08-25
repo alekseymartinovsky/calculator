@@ -3,6 +3,9 @@ import Button from "../Button/Button";
 import style from './RegularCalc.module.css';
 import History from "../History/History";
 
+let classNames = require('classnames/bind')
+let cx = classNames.bind(style);
+
 const buttons = [
     { name: '(', key: 'shift+57', symbol: '(' },
     { name: ')', key: 'shift+48', symbol: ')' },
@@ -320,9 +323,17 @@ const RegularCalc = () => {
         }
     }, [])
 
+    const [viewCalc, setViewCalc] = useState(false);
+    let classCalc = cx({calc: true}, {hiddenEl: viewCalc});
+
+    const toggleHistory = () => {
+        setViewCalc(!viewCalc);
+    }
+
     return (
+        <>
         <div className={style.main}>
-            <div className={style.calc} >
+            <div className={classCalc}>
                 <div className={style.calc_div_inp}>
                     <div className={style.calc_inp} >{example}</div>
                     <div className={style.calc_res}><p className={style.calc_res_p}>{result}</p></div>
@@ -336,11 +347,13 @@ const RegularCalc = () => {
                             />
                         })
                     }
+                    <button onClick={toggleHistory} className={style.viewButton}>История</button>
                 </div>
             </div>
-            <History history={history} setHistory={setHistory} />
+            <History history={history} setHistory={setHistory} view={!viewCalc} setView={setViewCalc} />
         </div>
-
+        
+        </>
     )
 }
 

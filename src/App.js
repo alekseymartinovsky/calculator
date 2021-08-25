@@ -3,6 +3,9 @@ import RegularCalc from "./components/RegularCalc/RegularCalc";
 import SpecialCalc from "./components/SpecialCalc/SpecialCalc";
 import { Switch, Route } from "react-router";
 import { Router, BrowserRouter } from "react-router-dom";
+import style from './App.module.css';
+import { useState } from 'react';
+
 
 const regularFormula = (val, val1, val2) => {
   if(val === ''){
@@ -126,10 +129,18 @@ const time = [ //относительно минут
 ]
 
 function App() {
+
+  const [viewMenu, setViewMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setViewMenu(!viewMenu);
+  }
+
   return (
     <div>
       <BrowserRouter>
-      <Header/>
+      <div onClick={toggleMenu} className={style.menu}>Меню</div>
+      <Header viewMenu={viewMenu} toggleMenu={toggleMenu}/>
       <Switch>
         <Route exact path="/" render={() => <RegularCalc />} />
         <Route path="/square" render={() => <SpecialCalc data={squares} calcFormula={regularFormula}/>} />

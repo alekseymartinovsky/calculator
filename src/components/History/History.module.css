@@ -15,10 +15,10 @@ h3{
     height: 479px;
     width: 310px;
     overflow-y: scroll;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    flex-flow: row wrap;
+    flex-flow: row wrap; */
 }
 
 .history_empty{
@@ -65,28 +65,50 @@ h3{
     color: #0097b3;
 }
 
-.clear{
-    height: 75px;
-    max-width: 310px;
-    border-top: 1px solid black;
-    background: #c4f7ff;
+.history_buttons{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    position: absolute;
-    bottom: 0;
+    justify-content: space-between;
+    position: relative;
+    height: 75px;    
+    border-top: 1px solid black;
 }
 
-.clear:hover{
+.history_buttons div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #c4f7ff;
+}
+
+.history_buttons div:hover{
     background: #70e5fa;    
 }
 
-@media (max-width: 800px) {
+.history_buttons_back{
+    max-width: 75px;
+    border-left: 1px solid black;
+}
+
+@media (max-width: 768px) {
     .main{
-        width: 100%;
-        visibility: hidden;
+        margin-top: 30px;
+        height: 555px;
+        border: 1px solid black;
+    }
+
+    .hiddenEl{
         display: none;
+    }
+
+    .note_container:hover p{
+        visibility: hidden;
+        height: 100%;
+    }
+
+    .note_body{
+        word-wrap: wrap;
+        white-space: pre-line;
     }
 }

@@ -22,8 +22,37 @@
     border-bottom: 2px solid black;
 }
 
-@media (max-width: 800px) {
+.cross{
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
     .header{
-        display: none;
+        display: block;
+        z-index: 20;
+        position: absolute;
+        background: white;
+        height: 100%;
+        min-width: 200px;
+
+        left: -200px;
+        transform: translate(200px, 0);
+        transition: left .4s;
+    }
+
+    .cross{
+        visibility: inherit;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 50px;
+    }
+
+    .header_block{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .hiddenMenu{
+        visibility: hidden;
     }
 }
