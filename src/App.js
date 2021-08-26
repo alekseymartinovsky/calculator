@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import RegularCalc from "./components/RegularCalc/RegularCalc";
 import SpecialCalc from "./components/SpecialCalc/SpecialCalc";
 import { Switch, Route } from "react-router";
-import { Router, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import style from './App.module.css';
 import { useState } from 'react';
 
@@ -130,7 +130,7 @@ const time = [ //относительно минут
 
 function App() {
 
-  const [viewMenu, setViewMenu] = useState(false);
+  const [viewMenu, setViewMenu] = useState(true);
 
   const toggleMenu = () => {
     setViewMenu(!viewMenu);

@@ -75,7 +75,8 @@ h3{
 
 .history_buttons div{
     display: flex;
-    width: 100%;
+    width: 
+        100%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -87,8 +88,8 @@ h3{
 }
 
 .history_buttons_back{
-    max-width: 75px;
-    border-left: 1px solid black;
+    max-width: 0px;
+    visibility: hidden;
 }
 
 @media (max-width: 768px) {
@@ -96,6 +97,13 @@ h3{
         margin-top: 30px;
         height: 555px;
         border: 1px solid black;
+    }
+
+    .history_buttons_back{
+        display: block;
+        max-width: 75px;
+        border-left: 1px solid black;
+        visibility: visible;
     }
 
     .hiddenEl{

@@ -23,7 +23,7 @@
 }
 
 .cross{
-    visibility: hidden;
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -41,6 +41,7 @@
     }
 
     .cross{
+        display: block;
         visibility: inherit;
         width: 40px;
         height: 40px;
@@ -53,6 +54,6 @@
     }
 
     .hiddenMenu{
-        visibility: hidden;
+        display: none;
     }
 }

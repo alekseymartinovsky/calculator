@@ -1,9 +1,18 @@
 .menu{
-    position: absolute;
+    position: relative;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 20px;
     text-align: center;
 
     text-transform: uppercase;
+    display: none;
+}
 
+@media (max-width: 768px) {
+    .menu{
+        display: block;
+        text-decoration: underline;
+        color: black;
+        text-shadow: rgb(7, 91, 194) 0 0 10px;
+    }
 }
