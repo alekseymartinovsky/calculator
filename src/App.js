@@ -135,23 +135,24 @@ function App() {
   const toggleMenu = () => {
     setViewMenu(!viewMenu);
   }
-
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/calculator">
+      <Route>
       <div onClick={toggleMenu} className={style.menu}>Меню</div>
       <Header viewMenu={viewMenu} toggleMenu={toggleMenu}/>
       <Switch>
-        <Route exact path="/" render={() => <RegularCalc />} />
-        <Route path="/square" render={() => <SpecialCalc data={squares} calcFormula={regularFormula}/>} />
-        <Route path="/long" render={() => <SpecialCalc data={long} calcFormula={regularFormula}/>} />
-        <Route path="/temperature" render={() => <SpecialCalc data={temperature} calcFormula={temperatureFormula}/>} />
-        <Route path="/volume" render={() => <SpecialCalc data={volume} calcFormula={regularFormula}/>} />
-        <Route path="/weight" render={() => <SpecialCalc data={weight} calcFormula={regularFormula}/>} />
-        <Route path="/data" render={() => <SpecialCalc data={data}/>} calcFormula={regularFormula}/>
-        <Route path="/speed" render={() => <SpecialCalc data={speed} calcFormula={regularFormula}/>} />
-        <Route path="/time" render={() => <SpecialCalc data={time} calcFormula={regularFormula}/>} />
+        <Route exact path={'/'} render={() => <RegularCalc />} />
+        <Route path={"/square"} render={() => <SpecialCalc data={squares} calcFormula={regularFormula}/>} />
+        <Route path={"/long"} render={() => <SpecialCalc data={long} calcFormula={regularFormula}/>} />
+        <Route path={"/temperature"} render={() => <SpecialCalc data={temperature} calcFormula={temperatureFormula}/>} />
+        <Route path={"/volume"} render={() => <SpecialCalc data={volume} calcFormula={regularFormula}/>} />
+        <Route path={"/weight"} render={() => <SpecialCalc data={weight} calcFormula={regularFormula}/>} />
+        <Route path={"/data"} render={() => <SpecialCalc data={data}/>} calcFormula={regularFormula}/>
+        <Route path={"/speed"} render={() => <SpecialCalc data={speed} calcFormula={regularFormula}/>} />
+        <Route path={"/time"} render={() => <SpecialCalc data={time} calcFormula={regularFormula}/>} />
       </Switch>
+      </Route>
       </BrowserRouter>
     </div>
   );

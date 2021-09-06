@@ -15,14 +15,12 @@ h3{
     height: 479px;
     width: 310px;
     overflow-y: scroll;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-flow: row wrap; */
 }
 
 .history_empty{
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50%;
     font-size: 18px;
     color: #0097b3;
 }
