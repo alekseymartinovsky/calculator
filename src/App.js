@@ -148,7 +148,7 @@ function App() {
         <Route path={"/temperature"} render={() => <SpecialCalc data={temperature} calcFormula={temperatureFormula}/>} />
         <Route path={"/volume"} render={() => <SpecialCalc data={volume} calcFormula={regularFormula}/>} />
         <Route path={"/weight"} render={() => <SpecialCalc data={weight} calcFormula={regularFormula}/>} />
-        <Route path={"/data"} render={() => <SpecialCalc data={data}/>} calcFormula={regularFormula}/>
+        <Route path={"/data"} render={() => <SpecialCalc data={data} calcFormula={regularFormula}/>} />
         <Route path={"/speed"} render={() => <SpecialCalc data={speed} calcFormula={regularFormula}/>} />
         <Route path={"/time"} render={() => <SpecialCalc data={time} calcFormula={regularFormula}/>} />
       </Switch>
